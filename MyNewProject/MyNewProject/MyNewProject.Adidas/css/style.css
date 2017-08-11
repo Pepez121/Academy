@@ -1,0 +1,251 @@
+/*********************************************************** 
+                           GENERAL
+ Fonts:
+        Poppins = font-family: 'Poppins', sans-serif;
+***********************************************************/
+
+html {
+    min-height: 100%;
+}
+
+body {
+    padding-bottom: 200px;
+    position: relative;
+}
+
+p {
+    text-align: justify;
+    font-size: 19px;
+}
+
+li {
+    font-size: 16px;
+}
+
+.heading1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*********************************************************** 
+                           HEADER
+***********************************************************/
+
+header {
+    background-color: black;
+}
+
+#logo-main {
+    height: 100px;
+    width: 300px;
+}
+
+.header-logo {
+    padding: 10px;
+}
+
+.header-banner {
+    display: block;
+}
+
+
+/*********************************************************** 
+                        INDEX
+***********************************************************/
+
+.cover-image {
+    margin: 0 auto;
+    display: table;
+}
+
+#cover-img {
+    width: 600px;
+}
+
+
+/*********************************************************** 
+                       SOCIAL MEDIA
+***********************************************************/
+
+.social-media {
+    display: table;
+    margin: 0 auto;
+}
+
+.social-media-icon {
+    float: left;
+    padding: 10px;
+}
+
+.social-media-icon-img {
+    width: 50px;
+    height: 50px;
+}
+
+.social-media-top {
+    overflow: hidden;
+}
+
+
+/*********************************************************** 
+                           CATALOG
+***********************************************************/
+
+.catalog-image {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    display: block;
+}
+
+.product-desc {
+    font-size: 20px;
+}
+
+.prod-desc-text {
+    text-align: justify;
+}
+
+.prod-desc-title {
+    text-align: center;
+    font-weight: 600;
+}
+
+.catalog-section {
+    background-color: #d0edd3;
+    border: 5px solid #38703e;
+    border-radius: 20px;
+}
+
+.catalog-section .product-desc,
+.product-img {
+    padding: 15px;
+}
+
+
+/*********************************************************** 
+                       SPECIFIC PRODUCT
+***********************************************************/
+
+.product-image {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    display: block;
+}
+
+.product-text p {
+    text-align: center;
+}
+
+.p-model {
+    color: #ad0606;
+}
+
+.p-price {
+    color: #06ad2f;
+}
+
+.product-description {
+    display: inline-block;
+    padding: 10px;
+}
+
+.product-related-image {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    display: block;
+}
+
+.thumb-image {
+    margin: 10px 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.thumb-section {
+    display: table;
+    margin: 0 auto;
+}
+
+.thumb-img {
+    margin: 0 10px;
+    float: left;
+}
+
+.thumb-main {
+    background-color: #d0edd3;
+    border: 5px solid #38703e;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+/*********************************************************** 
+                           CONTACT
+***********************************************************/
+
+#clear-button-div {
+    float: left;
+    margin-left: 10px;
+}
+
+#send-button-div {
+    margin-left: 480px;
+    overflow: hidden;
+}
+
+#contact-buttons {
+    display: inline-block;
+}
+
+.radio-inline {
+    margin: 0 10px;
+}
+
+
+/*********************************************************** 
+                        USER REPORTS
+***********************************************************/
+
+
+table tr:nth-child(odd) {
+    background-color: #e5e8ff;
+}
+
+table tr:nth-child(even) {
+    background-color: white;
+}
+
+.table th {
+    background-color: #3b4382;
+    color: white;
+}
+
+/*********************************************************** 
+                           FOOTER
+***********************************************************/
+
+.footer {
+    background-color: #343434;
+    color: white;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.footer p {
+    text-align: center;
+}
+
+.strong-footer {
+    color: #3ed8d1;
+}
+
+.fa-footer {
+    color: #3ed8d1;
+}
