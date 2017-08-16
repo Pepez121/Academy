@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <!-- jQuery 3.2.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-banner">
+            <div class="header-logo">
+                <img id="logo-main" src="img/logo.jpg" alt="Adidas Logo">
+            </div>
+        </div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="active"><a href="about.html">About</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="user-report.html">User Report</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="heading1">ABOUT US</h1>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-10">
+                    <br><br>
+                    <p style="font-size: 26px;">Adidas is a German multinational corporation, headquartered in Herzogenaurach, Bavaria, that designs and manufactures shoes, clothing and accessories. It is the largest sportswear manufacturer in Europe, and the second largest in the world</p>
+                    <p style="font-size: 20px;">It is the holding company for the Adidas Group, which consists of the Reebok sportswear company, TaylorMade-Adidas golf company (including Ashworth), 8.33% of Bayern Munich and Runtastic, an Austrian fitness technology company. Adidas revenue for 2016 was listed at €19.29 billion.</p>
+                </div>
+                <aside>
+                    <div class="col-xs-12 col-md-2">
+                        <div class="social-media">
+                            <p style="text-align: center; font-family: 'Poppins', sans-serif;">Follow us!</p>
+                            <div class="social-media-top">
+                                <div class="social-media-icon">
+                                    <img class="social-media-icon-img" src="img/socialmedia_facebook.jpg">
+                                </div>
+                                <div class="social-media-icon">
+                                    <img class="social-media-icon-img" src="img/socialmedia_instagram.jpg">
+                                </div>
+                            </div>
+                            <div class="social-media-bottom">
+                                <div class="social-media-icon">
+                                    <img class="social-media-icon-img" src="img/socialmedia_twitter.jpg">
+                                </div>
+                                <div class="social-media-icon">
+                                    <img class="social-media-icon-img" src="img/socialmedia_youtube.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer">
+            <p>All rights reserved 2017 &reg; </p>
+            <p>Any doubts? You can <strong class="strong-footer">find us</strong> at Torres en el Parque, Purple Building #2 Floor 3 <i class="fa fa-building fa-lg fa-footer"></i></p>
+            <p>Or you can <strong class="strong-footer">call us</strong> to (81) 1711 9119 <i class="fa fa-phone fa-lg fa-footer"></i></p>
+            <p id="footer-date"></p>
+        </div>
+    </footer>
+
+</body>
+<script>
+    var d = new Date();
+    document.getElementById("footer-date").innerHTML = d;
+</script>
+</html>
