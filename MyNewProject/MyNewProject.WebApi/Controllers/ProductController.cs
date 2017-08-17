@@ -10,7 +10,7 @@ using System.Web.Http.Cors;
 
 namespace MyNewProject.WebApi.Controllers
 {
-    [EnableCors(origins: "http://localhost:57172", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:59643", headers: "*", methods: "*")]
     public class ProductController : ApiController
     {
         // GET: api/Product

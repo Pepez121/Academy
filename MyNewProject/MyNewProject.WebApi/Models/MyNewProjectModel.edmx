@@ -4,7 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AdidasProductsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AdidasProductsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ProductImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageDescription" Type="nvarchar(max)" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="UpdateDateTime" Type="datetime" />
+        </EntityType>
         <EntityType Name="Products">
           <Key>
             <PropertyRef Name="Id" />
@@ -20,11 +32,27 @@
           <Property Name="CreateDateTime" Type="datetime" />
           <Property Name="UpdateDateTime" Type="datetime" />
         </EntityType>
+        <Association Name="FK__ProductIm__Produ__239E4DCF">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="ProductImages" Type="Self.ProductImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductImages">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="AdidasProductsModelStoreContainer">
+          <EntitySet Name="ProductImages" EntityType="Self.ProductImages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ProductIm__Produ__239E4DCF" Association="Self.FK__ProductIm__Produ__239E4DCF">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductImages" EntitySet="ProductImages" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AdidasProductsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -42,10 +70,41 @@
           <Property Name="CategoryId" Type="Int32" />
           <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
           <Property Name="UpdateDateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ProductImages" Relationship="AdidasProductsModel.FK__ProductIm__Produ__239E4DCF" FromRole="Product" ToRole="ProductImage" />
         </EntityType>
         <EntityContainer Name="AdidasProductsEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductImages" EntityType="AdidasProductsModel.ProductImage" />
+          <AssociationSet Name="FK__ProductIm__Produ__239E4DCF" Association="AdidasProductsModel.FK__ProductIm__Produ__239E4DCF">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductImage" EntitySet="ProductImages" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="ProductImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Product" Relationship="AdidasProductsModel.FK__ProductIm__Produ__239E4DCF" FromRole="ProductImage" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK__ProductIm__Produ__239E4DCF">
+          <End Type="AdidasProductsModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="AdidasProductsModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductImage">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -65,6 +124,19 @@
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
                 <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductImages">
+            <EntityTypeMapping TypeName="AdidasProductsModel.ProductImage">
+              <MappingFragment StoreEntitySet="ProductImages">
+                <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="ImageDescription" ColumnName="ImageDescription" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
