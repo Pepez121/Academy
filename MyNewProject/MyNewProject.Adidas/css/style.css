@@ -113,8 +113,8 @@ header {
 }
 
 .catalog-section {
-    background-color: #d0edd3;
-    border: 5px solid #38703e;
+    background-color: #f4f4f4;
+    border: 5px solid #7e90ad;
     border-radius: 20px;
 }
 
@@ -176,8 +176,8 @@ header {
 }
 
 .thumb-main {
-    background-color: #d0edd3;
-    border: 5px solid #38703e;
+    background-color: #f4f4f4;
+    border: 5px solid #7e90ad;
     border-radius: 20px;
     padding: 10px;
 }
@@ -243,9 +243,9 @@ table tr:nth-child(even) {
 }
 
 .strong-footer {
-    color: #3ed8d1;
+    color: #82ffee;
 }
 
 .fa-footer {
-    color: #3ed8d1;
+    color: #82ffee;
 }
