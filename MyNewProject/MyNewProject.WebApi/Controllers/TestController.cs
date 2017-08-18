@@ -19,10 +19,27 @@ namespace MyNewProject.WebApi.Controllers
             //var products = db.Products.AsEnumerable();
             //return products.ToList();
 
+            //var catalog = (from p in db.Products.AsEnumerable()
+            //               join i in db.ProductImages.AsEnumerable()
+            //               on p.Id equals i.ProductId
+            //               select new { p.Id,
+            //                            p.Name,
+            //                            p.ProductDescription,
+            //                            i.ImageUrl,
+            //                            p.Price,
+            //                            p.Model}).ToList();
             var catalog = (from p in db.Products.AsEnumerable()
                            join i in db.ProductImages.AsEnumerable()
                            on p.Id equals i.ProductId
-                           select new { p.Id, p.Name, p.ProductDescription, i.ImageUrl }).ToList();
+                           select new
+                           {
+                               p.Id,
+                               p.Name,
+                               p.ProductDescription,
+                               i.ImageUrl,
+                               p.Price,
+                               p.Model
+                           }).ToList();
             return catalog;
         }
     }
