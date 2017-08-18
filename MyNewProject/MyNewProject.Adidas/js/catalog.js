@@ -19,7 +19,7 @@ $(document).ready(function () {
 function GetAllProducts() {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:57172/api/test',
+        url: 'http://localhost:57172/api/test', //Puerto 57172 es de WebApi
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {

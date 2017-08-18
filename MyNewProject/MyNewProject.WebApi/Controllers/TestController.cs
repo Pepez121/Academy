@@ -19,8 +19,6 @@ namespace MyNewProject.WebApi.Controllers
             //var products = db.Products.AsEnumerable();
             //return products.ToList();
 
-            var myProducts = db.Products.AsEnumerable();
-            var myImages = db.ProductImages.AsEnumerable();
             var catalog = (from p in db.Products.AsEnumerable()
                            join i in db.ProductImages.AsEnumerable()
                            on p.Id equals i.ProductId
